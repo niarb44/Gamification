@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Task</title>
+
+    <!-- Ładowanie odpowiednich stylów na podstawie wybranego motywu -->
+    <link rel="stylesheet" th:href="@{/css/theme-default.css}" th:if="${user.theme == 'default'}">
+    <link rel="stylesheet" th:href="@{/css/theme-fantasy.css}" th:if="${user.theme == 'fantasy'}">
+    <link rel="stylesheet" th:href="@{/css/theme-sci-fi.css}" th:if="${user.theme == 'sci-fi'}">
+    <link rel="stylesheet" th:href="@{/css/theme-action.css}" th:if="${user.theme == 'action'}">
+    <link rel="stylesheet" th:href="@{/css/theme-default.css}" th:if="${user.theme == null}">
+</head>
+<body th:class="${user.theme}">
+<div class="main-container">
+
+    <div class="content">
+        <h1>Your Current Task</h1>
+
+        <div class="task-details">
+            <p><strong>Task:</strong> <span th:text="${task.name}">Sample Task</span></p>
+            <p><strong>Points to Earn:</strong> <span th:text="${task.points}">0</span></p>
+        </div>
+
+        <div class="button-container">
+            <form th:action="@{/tasks/complete}" method="post">
+                <input type="hidden" name="taskId" th:value="${task.id}" />
+                <button type="submit" class="btn">Mark as Completed</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 Gamification Platform. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>

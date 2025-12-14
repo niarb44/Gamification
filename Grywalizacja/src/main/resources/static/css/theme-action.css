@@ -1,0 +1,87 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Arial Black', sans-serif; /* Bold, action-like font */
+    background-color: #1c1c1c; /* Dark, gritty background */
+    color: #ff6b6b; /* Intense red for action */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(90deg, #ff4d4d, #ff1a1a); /* Fire-like gradient */
+    padding: 20px;
+    border-radius: 0; /* Sharp edges for action */
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px #000; /* Shadow for intensity */
+}
+
+.button-container {
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 77, 77, 0.7); /* Action red */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 0; /* Sharp corners */
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: rgba(255, 77, 77, 1); /* More vibrant on hover */
+    transform: scale(1.05);
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+    }
+}

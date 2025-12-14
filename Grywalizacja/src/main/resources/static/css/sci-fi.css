@@ -1,0 +1,16 @@
+body {
+    background-color: #000;
+    color: #00ffdd;
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #00ffdd;
+    padding: 10px;
+}
+
+button {
+    background-color: #00aaff;
+    color: white;
+}

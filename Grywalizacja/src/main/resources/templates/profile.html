@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <!-- Ładowanie stylów na podstawie wybranego motywu -->
+    <link rel="stylesheet" th:href="@{/css/theme-default.css}" th:if="${user.theme == 'default'}">
+    <link rel="stylesheet" th:href="@{/css/theme-fantasy.css}" th:if="${user.theme == 'fantasy'}">
+    <link rel="stylesheet" th:href="@{/css/theme-sci-fi.css}" th:if="${user.theme == 'sci-fi'}">
+    <link rel="stylesheet" th:href="@{/css/theme-action.css}" th:if="${user.theme == 'action'}">
+    <link rel="stylesheet" th:href="@{/css/theme-default.css}" th:if="${user.theme == null}">
+
+</head>
+<body th:class="${user.theme}">
+<div class="main-container">
+    <header>
+        <h1>Welcome, <span th:text="${username}">User</span>!</h1>
+    </header>
+
+    <div class="content">
+        <div class="profile-info">
+            <p><strong>Points:</strong> <span th:text="${points}">0</span></p>
+            <p><strong>Level:</strong> <span th:text="${level}">0</span></p>
+        </div>
+
+        <div class="button-container">
+            <a href="/" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 Gamification Platform. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>

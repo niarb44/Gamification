@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+
+    <!-- Ładowanie odpowiednich stylów na podstawie wybranego motywu -->
+    <link rel="stylesheet" th:href="@{/css/theme-default.css}" th:if="${user.theme == 'default'}">
+    <link rel="stylesheet" th:href="@{/css/theme-fantasy.css}" th:if="${user.theme == 'fantasy'}">
+    <link rel="stylesheet" th:href="@{/css/theme-sci-fi.css}" th:if="${user.theme == 'sci-fi'}">
+    <link rel="stylesheet" th:href="@{/css/theme-action.css}" th:if="${user.theme == 'action'}">
+    <link rel="stylesheet" th:href="@{/css/theme-default.css}" th:if="${user.theme == null}">
+</head>
+<body th:class="${user.theme}">
+<div class="main-container">
+
+    <header>
+        <h1>Welcome, <span th:text="${user.username}">User</span>!</h1>
+        <p>Your current theme: <span th:text="${user.theme}"></span></p>
+    </header>
+
+    <div class="content">
+        <section class="levels button-container">
+            <a href="#" class="btn">Your Levels</a>
+            <ul th:if="${levels != null and levels.size() > 0}">
+                <li th:each="level : ${levels}" th:text="${level}"></li>
+            </ul>
+        </section>
+
+        <section class="theme-selector button-container">
+            <a href="#" class="btn">Change Theme</a>
+            <form action="/profile2/set-theme" method="post">
+                <label for="theme">Choose a theme:</label>
+                <select name="theme" id="theme">
+                    <option value="default">Default</option>
+                    <option value="fantasy">Fantasy</option>
+                    <option value="sci-fi">Sci-Fi</option>
+                    <option value="action">Action</option>
+                </select>
+                <button type="submit" class="btn">Save</button>
+            </form>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>© 2024 Gamification Platform. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>

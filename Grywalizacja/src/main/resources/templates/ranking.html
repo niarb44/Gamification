@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Ranking</title>
+
+    <link rel="stylesheet" th:href="@{/css/theme-default.css}" th:if="${user.theme == 'default'}">
+    <link rel="stylesheet" th:href="@{/css/theme-fantasy.css}" th:if="${user.theme == 'fantasy'}">
+    <link rel="stylesheet" th:href="@{/css/theme-sci-fi.css}" th:if="${user.theme == 'sci-fi'}">
+    <link rel="stylesheet" th:href="@{/css/theme-action.css}" th:if="${user.theme == 'action'}">
+    <link rel="stylesheet" th:href="@{/css/theme-default.css}" th:if="${user.theme == null}">
+</head>
+<body th:class="${user.theme}">
+
+<div class="container">
+    <h1>User Ranking</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Username</th>
+            <th>Points</th>
+            <th>Level</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user, iterStat : ${users}">
+            <td th:text="${iterStat.index + 1}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.points}"></td>
+            <td th:text="${user.level}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

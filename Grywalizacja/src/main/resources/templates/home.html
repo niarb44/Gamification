@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamification Platform</title>
+
+    <link rel="stylesheet" th:href="@{/css/theme-default.css}" th:if="${user.theme == 'default'}">
+    <link rel="stylesheet" th:href="@{/css/theme-fantasy.css}" th:if="${user.theme == 'fantasy'}">
+    <link rel="stylesheet" th:href="@{/css/theme-sci-fi.css}" th:if="${user.theme == 'sci-fi'}">
+    <link rel="stylesheet" th:href="@{/css/theme-action.css}" th:if="${user.theme == 'action'}">
+    <link rel="stylesheet" th:href="@{/css/theme-default.css}" th:if="${user.theme == null}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body th:class="${user.theme}">
+<div class="main-container">
+    <header>
+        <h1>Welcome to Gamification Platform</h1>
+        <p>Unlock achievements, complete tasks, and climb the leaderboard!</p>
+
+        <form th:action="@{/logout}" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </header>
+
+    <div class="button-container">
+        <a th:href="@{/login}" class="btn">Login</a>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/register}" class="btn">Register</a>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/profile}" class="btn">Profile</a>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/profile2}" class="btn">Theme</a>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/ranking}" class="btn">Ranking</a>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/task}" class="btn">Your Task</a>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Gamification Platform. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>

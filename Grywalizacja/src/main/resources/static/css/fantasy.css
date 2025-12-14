@@ -1,0 +1,16 @@
+body {
+    background-color: #f3e5ab;
+    color: #4a2f29;
+    font-family: 'Papyrus', cursive;
+}
+
+header {
+    background-color: #6b4226;
+    color: #fff;
+    padding: 10px;
+}
+
+button {
+    background-color: #a67d3d;
+    color: white;
+}

@@ -1,0 +1,87 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Fantasy', cursive;
+    background-color: #332b1d; /* Dark wood texture */
+    color: #d1c7b6; /* Soft gold text color */
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header {
+    background: linear-gradient(45deg, #4c3821, #8c6a3e); /* Magic book texture */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px #1a1509; /* Shadow for mystical effect */
+}
+
+.button-container {
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(140, 106, 62, 0.7); /* Enchanted wood */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: rgba(140, 106, 62, 1); /* More vibrant on hover */
+    transform: scale(1.05);
+}
+
+.footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn {
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+    }
+}
