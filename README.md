@@ -67,6 +67,14 @@ The system was designed using the MVC architectural pattern and uses Spring Boot
 
 ---
 
+## ⚙️ Configuration
+
+The `application.properties` file is not included in the repository because it contains local database configuration.
+
+Create your own configuration file based on `application-example.properties` and provide your PostgreSQL username and password.
+
+---
+
 ## 🏗 Application Architecture
 
 The application is based on the MVC (Model-View-Controller) architecture.
